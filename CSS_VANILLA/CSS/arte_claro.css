@@ -1,0 +1,309 @@
+:root {
+  --color-acento:#e5a78f;
+  --color-primario: #B2967D;
+  --color-secundario:#E6BEAE ;
+  --color-fondo: #EEE4E1;
+  --color-fondo2:#ECF8F8;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-image: url(../Imagenes/fondoClaro.jpg);
+  background-size: cover;
+  background-position: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--color-secundario);
+  text-align: center;
+}
+
+/* Tipografia incrustada con el selector @ fontface */
+@font-face {
+  font-family: 'japan';
+  src: url(../Fuentes/Japan\ wave.ttf) format('truetype');
+ }
+ h1 {
+  font-family: 'japan';
+ }
+
+ 
+p {
+  color: var(--color-primario); 
+  text-align: center;
+}
+/*!----------------------------------------------HEADER----------------------------------------------------------------*/
+header {
+  padding: 80px;
+  text-align: center;
+  background-image: linear-gradient(rgba(215, 129, 129, 0.223), rgba(226, 136, 116, 0.938)),
+    url(../Imagenes/Arte/cabecera_Arte.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+
+h1 {
+  font-size: 40px;
+  
+}
+
+header h1{
+  color: var(--color-fondo2);
+}
+
+header p{
+  color:var(--color-fondo);
+}
+
+/*!----------------------------------------------NAV----------------------------------------------------------------*/
+nav {
+  overflow: hidden;
+  background-color: var(--color-primario);
+  display: flex;
+  justify-items: stretch;
+}
+
+/* Style the navigation bar links */
+nav a {
+  margin: auto;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+nav a.right {
+  float: right;
+}
+
+/* Change color on hover */
+nav a:hover {
+  background-color: var(--color-acento);
+  color: white;
+}
+
+#resaltado{
+  background-color: var(--color-secundario);
+  color: white;
+}
+/*!----------------------------------------------MAIN----------------------------------------------------------------*/
+/* Column container */
+main {
+  display: flex; /* IE10 */
+  flex-wrap: wrap;
+  width: 1500px;
+  margin: auto;
+   background-color: var(--color-fondo);
+}
+
+/* Main column */
+section {
+  width: 1500px;
+  margin: auto;
+  padding: 40px;
+
+  
+}
+/*!----------------------------------------------BOTON CLARO OSCURO----------------------------------------------------------------*/
+.seccion-boton{
+  display: flex;
+  flex-flow: column;
+  align-items:center ;
+}
+#boton-claro-oscuro{
+  background-color: var(--color-fondo);
+  box-shadow:  10px 10px 30px rgb(230, 213, 208),
+             -10px -10px 30px #f8f3f2;
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 6em;
+  margin-bottom: 6em;
+
+}
+
+#boton-claro-oscuro:hover{
+  box-shadow:  5px 5px 15px rgb(230, 213, 208),
+  -5px -5px 15px #f8f3f2;
+}
+
+#boton-claro-oscuro p{
+  font-weight: bold;
+}
+
+/*!---------------------------------------------------------------------------------------------------------------------*/
+ul{
+text-align: center;
+}
+
+ul a{
+ /*  Este comando quita los bullet points de la lista */
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--color-primario)
+
+}
+
+ul a:hover{
+  color:var(--color-acento);
+}
+
+
+figure {
+  width: 95%;
+  height: 800px;
+  overflow: hidden;
+}
+
+img{
+ padding: 40px;
+ min-width: 100%;
+
+}
+
+figcaption{
+  text-align: center;
+  color: var(--color-secundario);
+}
+
+article{
+  padding: 6em;
+  line-height: 200%;
+}
+
+.fondo_azul{
+  background-color: var(--color-fondo2);
+  padding:12em;
+}
+
+#largo{
+  left: 0;
+  width: 50%;
+  float: left;
+  padding-right: 2em;
+}
+#largo p{
+  text-align: left;
+  font-weight: bold;
+  
+}
+
+.lateral {
+ width: 50%;
+ height: 500px;
+}
+
+.lateral img{
+  width: 100%;
+
+}
+
+#kanagawa{
+  margin-left:30%;
+  margin-top: 12em;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+#kanagawa img{
+ margin-top: -100px;
+ margin-left: 20%;
+ min-width: 200%;
+ height: 800px;
+}
+
+#hokusai{
+  text-align: center;
+  color: var(--color-primario);
+  font-size: 20px;
+}
+
+#anime{
+  overflow: hidden;
+  font-size: 20px;
+}
+
+video{
+  width: 1200px;
+  margin-left: 8%;
+}
+/*!-------------------------------------------------------------FOOTER-------------------------------------------------------*/
+footer {
+  padding: 10px;
+  background: var(--color-fondo2);
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+footer a{
+  text-decoration: none;
+}
+footer p{
+margin-top: 1em;
+padding-left: 3em;
+text-align: left;
+width: 300px;
+font-weight: bold;
+color: var(--color-acento);
+}
+
+footer figure{
+  height: 200px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+footer figure img{
+  height: 100%;
+ 
+}
+
+#logo_medac{
+  height: 200px;
+}
+
+footer a img{
+  width: 150px;
+  height: 150px;
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}

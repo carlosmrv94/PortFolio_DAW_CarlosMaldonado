@@ -1,0 +1,395 @@
+/* Almaceno las variables en el selector raiz :root */
+:root {
+  --color-acento: #e6beae;
+  --color-primario: #b2967d;
+  --color-secundario: #e5a78f;
+  --color-fondo: #eee4e1;
+  --color-fondo2: #ecf8f8;
+}
+
+/* Un selector de todo * para aplicar border-box, esto es porque los navegadores no tienen por defecto esta opcion para adaptarse a webs antiguas */
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'japan';
+  src: url(../Fuentes/Japan\ wave.ttf) format('truetype');
+ }
+ h1 {
+  font-family: 'japan';
+ }
+/* parte del snippet de w3school asigna 0 al margen del body completo y especifica la fuente para el resto del documento*/
+/*!-------------------------------------------------------body----------------------------------------------------------------------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+
+  /* Imagen de fondo, rebosara por los lados del main dependiendo del formato de la pantalla, los colores de las variables estan sacados de esta */
+  background-image: url(../Imagenes/fondoClaro.jpg);
+
+  /* Que cubra todo el div */
+  background-size: cover;
+
+  /* Que se posicione desde arriba */
+  background-position: top;
+
+  /* Por defecto ejecuta la propiedad background-repeat : repeat ; que hace que se repita la imagen si no cubre la totalidad del div */
+}
+
+/* Aplico un estilo a todos los headings mediante un selector multiple */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--color-secundario);
+  text-align: center;
+}
+/* Tipografia incrustada con el selector @ fontface */
+@font-face {
+  font-family: 'japan';
+  src: url(../Fuentes/Japan\ wave.ttf) format('truetype');
+ }
+ h1 {
+  font-family: 'japan';
+ }
+
+
+/* Hago lo mismo con los parrafos */
+p {
+  color: var(--color-primario);
+  text-align: center;
+}
+
+/*!-----------------------------------------------------------header------------------------------------------------------------*/
+header {
+  /* El padding cambia el margen interior del div */
+  padding: 80px;
+  text-align: center;
+
+  /* Snippet cogido de w3schools para aplicar un degradado sobre la imagen de fondo, esta es la imagen de fondo del header*/
+  background-image: linear-gradient(
+      rgba(215, 129, 129, 0.223),
+      rgba(226, 136, 116, 0.938)
+    ),
+    url(../Imagenes/Religion/cabecera.jpg);
+
+  /* Las propiedades de background que hemos visto antes */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  /*  color afecta al color de letra */
+  color: white;
+}
+
+/* Ya teniamos un selector para todos los heading, aqui especifico que solo el h1 sea mas grande */
+h1 {
+  font-size: 40px;
+}
+
+/* Solo para los header y parrafos descendientes de header se aplicaran estos colores */
+header h1 {
+  color: var(--color-fondo2);
+}
+
+
+header p {
+  color: var(--color-fondo);
+}
+
+/*!------------------------------------------------------NAV---------------------------------------------------------------------- */
+/* El navegador con enlaces a otras paginas, este primer nav se refiere solo al div contenedor de todo el navegador */
+nav {
+  /* overflow oculta todo lo que se salga del div, como imagenes de fondo  */
+  overflow: hidden;
+  background-color: var(--color-primario);
+
+  /* Un tipo de posicionamiento en CSS convierte en flex el div contenedor para colocar de cierta forma sus descendientes directos */
+  display: flex;
+
+  /* Una propiedad de flexbox que permite ajustar los hijos al espacio del div contenedor  */
+  justify-items: stretch;
+}
+
+/* Snippet de w3school para los enlaces dentro del nav, estos hacen las veces de div jugando con el padding */
+nav a {
+  margin: auto;
+  color: white;
+  text-align: center;
+
+  /* Al poner dos paddings juntos se lee como padding horizontal - padding vertical */
+  padding: 14px 20px;
+
+  /* Esto anula el color azul y el subrayado que tienen los enlaces por defecto */
+  text-decoration: none;
+}
+
+/* Snippet de w3 schools permite a los enlaces orientarse de horizontalmente */
+nav a.right {
+  float: right;
+}
+
+/* Snippet de w3School la pseudoclase hover ejecuta este estilo cuando el cursor pasa por encima */
+nav a:hover {
+  background-color: var(--color-acento);
+  color: white;
+}
+
+/* selector de identificador que resalta el enlace de la pagina en la que ya te encuentras */
+#resaltado {
+  background-color: var(--color-secundario);
+  color: white;
+}
+
+/*!-------------------------------------------------------MAIN---------------------------------------------------------------------- */
+/* Seccion principal del main */
+main {
+ /*  Lo convierto en flexbox */
+  display: flex; 
+ /*  Esta propiedad de flexbox hace que si no caben en el div pase a la siguiente linea */
+  flex-wrap: wrap;
+  width: 1500px;
+  margin: auto;
+  background-color: var(--color-fondo);
+}
+
+/* Main column */
+section {
+  width: 1500px;
+  margin: auto;
+  padding: 40px;
+ 
+}
+/*!-------------------------------------------------------BOTON CLARO OSCURO----------------------------------------------------------------------- */
+.seccion-boton{
+  display: flex;
+  flex-flow: column;
+  align-items:center ;
+}
+#boton-claro-oscuro{
+  background-color: var(--color-fondo);
+  box-shadow:  10px 10px 30px rgb(230, 213, 208),
+             -10px -10px 30px #f8f3f2;
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 6em;
+  margin-bottom: 6em;
+
+}
+
+#boton-claro-oscuro:hover{
+  box-shadow:  5px 5px 15px rgb(230, 213, 208),
+  -5px -5px 15px #f8f3f2;
+}
+
+#boton-claro-oscuro p{
+  font-weight: bold;
+}
+/*!------------------------------------------------------------------------------------------------------------------------------------------- */
+ul {
+  text-align: center;
+}
+
+ul a {
+  /*  Este comando quita los bullet points de la lista */
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--color-primario);
+}
+
+ul a:hover {
+  color: var(--color-acento);
+}
+
+figure {
+  width: 95%;
+  height: 800px;
+  overflow: hidden;
+}
+
+img {
+  padding: 40px;
+  min-width: 100%;
+}
+
+figcaption {
+  text-align: center;
+  color: var(--color-secundario);
+}
+
+article {
+  padding: 6em;
+  line-height: 200%;
+}
+
+.fondo_azul {
+  background-color: var(--color-fondo2);
+  padding-top: 12em;
+  padding-bottom: 12em;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.fondo_azul figure {
+  float: left;
+  width: 50%;
+  margin-left: 0;
+}
+
+.fondo_azul img {
+  width: 160%;
+}
+
+#yokais {
+  left: 0;
+  width: 40%;
+  float: left;
+  padding-right: 2em;
+  padding-top: 2em;
+}
+
+#yokais h2 {
+  text-align: left;
+}
+#yokais p {
+  text-align: left;
+  margin-top: 0;
+}
+
+dl {
+  float: left;
+  text-align: left;
+  font-weight: bold;
+}
+dt {
+  padding-top: 2em;
+  margin-top: 4em;
+  color: var(--color-secundario);
+  padding-left: 3em;
+}
+dd {
+  color: var(--color-primario);
+  padding-left: 2em;
+  padding-top: 1em;
+}
+
+dl figure {
+  margin-top: 6em;
+  max-width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+dl img {
+  min-width: 150%;
+  height: 150%;
+}
+
+.lateral {
+  width: 50%;
+  height: 500px;
+}
+
+.lateral img {
+  width: 100%;
+}
+
+#religiones {
+  margin-left: 30%;
+  margin-top: 12em;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+#religiones img {
+  margin-top: -100px;
+  margin-left: 70%;
+  min-width: 200%;
+  height: 800px;
+}
+
+#porcentajes li {
+  font-weight: bold;
+  list-style-type: none;
+  margin-top: 2em;
+  text-align: center;
+  color: var(--color-primario);
+  font-size: 20px;
+}
+/*!-------------------------------------------------------------FOOTER-------------------------------------------------------*/
+footer {
+  padding: 10px;
+  background: var(--color-fondo2);
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+footer a{
+  text-decoration: none;
+}
+footer p{
+margin-top: 1em;
+padding-left: 3em;
+text-align: left;
+width: 300px;
+font-weight: bold;
+color: var(--color-acento);
+}
+
+footer figure{
+  height: 200px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+footer figure img{
+  height: 100%;
+  object-fit: cover;
+ 
+}
+
+#logo_medac{
+  height: 200px;
+  object-fit: cover;
+}
+
+footer a img{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
